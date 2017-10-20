@@ -4,16 +4,16 @@ API used:
 https://www.nutritionix.com/business/api
 Nutritionix
 Nutrition API by Nutritionix
-The Nutritionix API powers hundreds of health and fitness applications with a best-in-cass nutrition database solution.
+The Nutritionix API powers hundreds of health and fitness applications with a best-in-class nutrition database solution.
 
 2 core parts:
 
-Propt user to enter calorie goal at start,
+Prompt user to enter calorie goal at start,
 Recommend fast food/restaurant items to eat at to reach that goal.
 
 
 ----
-lots of future features i want to implement but that's what I think I've narrowed the core goal down to.
+lots of future features I want to implement but that's what I think I've narrowed the core goal down to.
 
 
 
@@ -22,7 +22,7 @@ All your standard calorie tracker stuff to lose weight.
   -There is a feature I want to add here to defer calorie intake for a day, like if you had a birthday dinner coming up, the app will adjust the days before for less calories so on that day you can eat more. Haven't seen this in an app yet but its recommended in a lot of fitness sites.
 
 Implementation with food delivery services like favor, so you don't have to leave your office/home to reach your goals on busy days.
-
+------
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
