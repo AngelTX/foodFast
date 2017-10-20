@@ -1,33 +1,26 @@
-I found a good (i think) API to use and the app will use 3 presentation components. Trying to think of the last part of implementation, but i think my plan is mostly solidified =D
 
+API used:
 
-[10:57]
 https://www.nutritionix.com/business/api
 Nutritionix
 Nutrition API by Nutritionix
 The Nutritionix API powers hundreds of health and fitness applications with a best-in-cass nutrition database solution.
 
-
-
-[10:57]
-this is the API i think i'm going to use if ya want to look at it. You get a free key for only 10 users which is good since it'll only be me
-
-
-[10:58]
-its going to be 3 parts:
+2 core parts:
 
 Propt user to enter calorie goal at start,
 Recommend fast food/restaurant items to eat at to reach that goal.
 
 
-[10:58]
-lots of future features i want to implement but thats what i think i've narrowed the core goal down to (edited)
+----
+lots of future features i want to implement but that's what I think I've narrowed the core goal down to.
 
 
-[11:00]
+
 Future features:
 All your standard calorie tracker stuff to lose weight.
-  -There is a feature i want to add here to defer calorie intake for a day, like if you had a birthday dinner coming up, the app will adjust the days before for less calories so on that day you can eat more. Havent seen this in an app yet but its recommended in a lot of fitness sites.
+  -There is a feature I want to add here to defer calorie intake for a day, like if you had a birthday dinner coming up, the app will adjust the days before for less calories so on that day you can eat more. Haven't seen this in an app yet but its recommended in a lot of fitness sites.
+
 Implementation with food delivery services like favor, so you don't have to leave your office/home to reach your goals on busy days.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
@@ -2194,3 +2187,4 @@ To resolve this:
 ## Something Missing?
 
 If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebookincubator/create-react-app/issues) or [contribute some!](https://github.com/facebookincubator/create-react-app/edit/master/packages/react-scripts/template/README.md)
+# foodFast
