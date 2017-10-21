@@ -15,13 +15,19 @@ class Menu extends Component{
       body: JSON.stringify({
         "appId":"f6c1ec63",
         "appKey":"75d1892186aa45da19a882eb81ba37ba",
-        "filters"{
+        "fields":["item_name","brand_name","nf_calories","images_front_full_url", "upc"],
+        "sort":{
+          "field":"_score",
+          "order":"desc"
+        },
+        "query": "starbucks",
+        "offset":0,
+        "limit":3,
+        "filters":{
+          "item_type":1,
           "nf_calories":{
-            "from":100,
-            "to":50
-          },
-          "nf_sodium":{
-            "lte":200
+            "from":500,
+            "to":700
           }
         }
       })
