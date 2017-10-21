@@ -3,14 +3,18 @@ import React, { Component } from 'react';
 class Menu extends Component{
   constructor() {
     super();
-    this.state = {items: ''}
+    this.state = {
+      itemCalories:'',
+      brandName:'',
+      itemName:''
+    }
   };
 
-  componentDidMount() {
+  componentWillMount() {
     fetch('https://api.nutritionix.com/v1_1/search', {
       method: 'POST',
       headers:{
-        'Accept': 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         "appId":"f6c1ec63",
@@ -31,13 +35,28 @@ class Menu extends Component{
           }
         }
       })
+    }).then(results => {
+      return results.json();
+    })
+    .then(data => {
+      // console.log(data);
+      // console.log(data.hits);
+      // console.log(data.hits[0]);
+      // console.log(data.hits[2].fields);
+      this.setState({
+        itemCalories:data.hits[0].fields.nf_calories,
+        brandName:data.hits[0].fields.brand_name,
+        itemName:data.hits[0].fields.item_name
+        });
     })
   }
 
   render(){
     return(
       <div>
-        <h1>Menu Items</h1>
+        <h1>{this.state.brandName}</h1>
+        <h1>{this.state.itemName}</h1>
+        <h1>{this.state.itemCalories}</h1>
       </div>
     )
   }
