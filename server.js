@@ -14,9 +14,9 @@ const APPID = "f6c1ec63",
       APPKEY = "75d1892186aa45da19a882eb81ba37ba";
 
 app.listen(3001, function() {
-  console.log('working on port 3001')
+  console.log('server.js working on port 3001')
 });
-app.get('/', function(req, res){
+app.get('/menu', function(req, res){
 
   fetch('https://api.nutritionix.com/v1_1/search', {
     method: 'POST',
@@ -50,5 +50,6 @@ app.get('/', function(req, res){
     // console.log(data.hits);
     // console.log(data.hits[0]);
     console.log(data.hits[2].fields);
+    res.end(`${data}`);
   })
 });
