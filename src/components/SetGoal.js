@@ -9,6 +9,8 @@ class SetGoal extends Component {
   }
 
   handleChange = (event) => {
+
+    // var calculatedCalorie = event.target.value
     this.setState({calorieGoal: event.target.value});
     console.log(this.state.calorieGoal);
   }
@@ -19,19 +21,30 @@ class SetGoal extends Component {
     }
     else {
       alert(`Calorie Goal: ${this.state.calorieGoal}`)
+
       event.preventDefault()
     }
   }
 
   render(){
     return(
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <h1>Set Goal</h1>
-          <input type="text" name="calorieGoal" value={this.state.calorieGoal} onChange={this.handleChange}/>
-          <input type="submit" value="Submit"/>
-        </form>
-      </div>
+      <header>
+
+        <div className="flexbox-container">
+
+            <form className="form-group row" onSubmit={this.handleSubmit}>
+
+              <label className="col-sm-5 col-form-label">Set Calorie Goal</label>
+              <div className="col-3">
+                <input type="text" className="form-control form-control-md" name="calorieGoal" value={this.state.calorieGoal} onChange={this.handleChange}/>
+              </div>
+              <button type="submit" className="btn btn-primary btn-md">submit</button>
+
+            </form>
+
+        </div>
+
+      </header>
     )
   }
 }
