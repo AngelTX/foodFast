@@ -37,8 +37,8 @@ app.get('/menu', (req, res) => {
       "filters":{
         "item_type":1,
         "nf_calories":{
-          "from":calRange1,
-          "to":calRange2
+          "from":500,
+          "to":600
         }
       }
     })
