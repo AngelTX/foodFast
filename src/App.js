@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 //Components
-import SetGoal from './components/setgoal.js';
+import SetGoal from './components/SetGoal.js';
 import Menu from './components/menu.js';
 
 class App extends Component {

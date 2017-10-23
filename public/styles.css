@@ -1,38 +1,35 @@
 body {
-    margin:0;
-    padding:0;
-    color: #1b1b1b;
+  background: url('https://i.ebayimg.com/images/g/GskAAOSwrklVBFrH/s-l500.jpg');
+  background-size: 12.5em 12em;
+  padding-top: 11em;
+}
+/*#text {
+  padding: .05em .4em;
+  margin-bottom: .2em;
+  background-color: #ffcb57;
+  color: #d43519;
+  font-size: 3.4em;
+}*/
+
+#input {
+  width: 25em;
+  height: 3.5em;
+  border: .2em solid #59b8c8;
+  margin-bottom: 1.5em;
 }
 
-.flexbox-container {
-	display: -ms-flex;
-	display: -webkit-flex;
-	display: flex;
-}
-header {
-    border-bottom: 1px solid #e2e2e2;
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #d43519;
+  padding-left: .8em;
+  font-weight: 800;
+
 }
 
-header,footer {
-    background: #black;
-    align-items: center;
-    padding: 10px;
-    font-family: 'Fjalla One', sans-serif;
-}
-header .logo,
-footer .logo {
-    flex-grow: 1;
-    height: 22px;
-}
-header .logo span,
-footer .logo span {
-    background: url('/images/logo.png') no-repeat;
-    display: inline-block;
-    width: 58px;
-    height: 24px;
-}
+/*#input::placeholder {
+  color: red:
+}*/
 
-footer {
-    background: #1f1f1f;
-    margin-top: 30px;
+#button {
+  width: 25em;
+  height: 2.5em;
 }

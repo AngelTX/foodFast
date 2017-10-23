@@ -13,10 +13,10 @@ var calRange2 = 400;
 const APPID = "f6c1ec63",
       APPKEY = "75d1892186aa45da19a882eb81ba37ba";
 
-app.listen(3001, function() {
+app.listen(process.env.PORT || 3001, () => {
   console.log('server.js working on port 3001')
 });
-app.get('/menu', function(req, res){
+app.get('/menu', (req, res) => {
 
   fetch('https://api.nutritionix.com/v1_1/search', {
     method: 'POST',

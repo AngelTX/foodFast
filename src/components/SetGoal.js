@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Col, Button } from 'react-bootstrap';
 
 
 class SetGoal extends Component {
@@ -30,20 +31,28 @@ class SetGoal extends Component {
     return(
       <header>
 
-        <div className="flexbox-container">
+        <Col xs={6} xsOffset={2}>
 
-            <form className="form-group row" onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
 
-              <label className="col-sm-5 col-form-label">Set Calorie Goal</label>
-              <div className="col-3">
-                <input type="text" className="form-control form-control-md" name="calorieGoal" value={this.state.calorieGoal} onChange={this.handleChange}/>
+              {/* <label id="text">Set Calorie Goal</label> */}
+              <div>
+                <input
+                  id="input"
+                  type="text"
+                  name="calorieGoal"
+                  placeholder="Set Calorie Goal!"
+                  value={this.state.calorieGoal}
+                  onChange={this.handleChange}/>
+
               </div>
-              <button type="submit" className="btn btn-primary btn-md">submit</button>
+
+
+              <Button bsStyle="info" type="submit" id="button">Submit</Button>
 
             </form>
 
-        </div>
-
+          </Col>
       </header>
     )
   }
