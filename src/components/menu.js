@@ -11,11 +11,12 @@ class Menu extends Component{
   };
 
   componentWillMount() {
-    fetch('http://108.238.240.192:3001/menu', {
+    fetch('http://localhost:3001/menu', {
       method: 'POST',
       headers : {
         'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Accept': 'application/json',
+        mode: 'no-cors',
       }
     })
     .then(results => {
