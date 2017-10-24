@@ -12,14 +12,14 @@ class Menu extends Component{
 
   componentWillMount() {
     fetch('http://localhost:3001/menu', {
-      method: 'POST',
+      method: 'GET',
       headers : {
         'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        mode: 'no-cors',
+        'Accept': 'application/json'
       }
     })
     .then(results => {
+      console.log(results);
       return results.json();
     })
     .then(data => {
