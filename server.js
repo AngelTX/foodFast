@@ -1,4 +1,5 @@
 'use-strict';
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
@@ -29,7 +30,7 @@ var fetchBody = JSON.stringify({
     "field":"_score",
     "order":"desc"
   },
-  "query": "starbucks",
+  "query": "breakfast",
   "offset":0,
   "limit":3,
   "filters":{

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Col } from 'react-bootstrap';
 
 class Menu extends Component{
   constructor() {
@@ -6,7 +7,14 @@ class Menu extends Component{
     this.state = {
       itemCalories:'',
       brandName:'',
-      itemName:''
+      itemName:'',
+      itemCalories1:'',
+      brandName1:'',
+      itemName1:'',
+      itemCalories2:'',
+      brandName2:'',
+      itemName2:''
+
     }
   };
 
@@ -30,7 +38,13 @@ class Menu extends Component{
       this.setState({
         itemCalories:data.hits[0].fields.nf_calories,
         brandName:data.hits[0].fields.brand_name,
-        itemName:data.hits[0].fields.item_name
+        itemName:data.hits[0].fields.item_name,
+        itemCalories1:data.hits[1].fields.nf_calories,
+        brandName1:data.hits[1].fields.brand_name,
+        itemName1:data.hits[1].fields.item_name,
+        itemCalories2:data.hits[2].fields.nf_calories,
+        brandName2:data.hits[2].fields.brand_name,
+        itemName2:data.hits[2].fields.item_name
         });
     })
   }
@@ -38,9 +52,25 @@ class Menu extends Component{
   render(){
     return(
       <div>
-        <h1>{this.state.brandName}</h1>
-        <h1>{this.state.itemName}</h1>
-        <h1>{this.state.itemCalories}</h1>
+        <Col xs={12}>
+          <div>
+            <h1>{this.state.brandName}</h1>
+            <h1>{this.state.itemName}</h1>
+            <h1>{this.state.itemCalories}</h1>
+          </div>
+
+          <div>
+            <h1>{this.state.brandName1}</h1>
+            <h1>{this.state.itemName1}</h1>
+            <h1>{this.state.itemCalories1}</h1>
+          </div>
+
+          <div>
+            <h1>{this.state.brandName2}</h1>
+            <h1>{this.state.itemName2}</h1>
+            <h1>{this.state.itemCalories2}</h1>
+          </div>
+        </Col>
       </div>
     )
   }
