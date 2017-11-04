@@ -8,11 +8,11 @@ var app = express();
 
 app.use(cors())
 
-const URL = 'https://api.nutritionix.com/v1_1/search';
+const APIURL = 'https://api.nutritionix.com/v1_1/search';
 
 
-var calRange1 = 300;
-var calRange2 = 400;
+var minCalValue = 300;
+var maxCalValue = 500;
 
 //Keys for the API
 const APPID = "f6c1ec63",
@@ -36,15 +36,19 @@ var fetchBody = JSON.stringify({
   "filters":{
     "item_type":1,
     "nf_calories":{
-      "from":500,
-      "to":600
+      "from":minCalValue,
+      "to":maxCalValue
     }
   }
 });
 
+app.post('/setGoal'), (req, res) => {
+  
+}
+
 app.get('/menu', (req, res) => {
 
-  fetch('https://api.nutritionix.com/v1_1/search', {
+  fetch(APIURL, {
     method: 'POST',
     headers:{
       'Content-Type': 'application/json',
