@@ -22,7 +22,7 @@ app.listen(process.env.PORT || 3001, () => {
   console.log('server.js working on port 3001')
 });
 
-var fetchBody = JSON.stringify({
+var fetchBody = {
   "appId":"f6c1ec63",
   "appKey":"75d1892186aa45da19a882eb81ba37ba",
   "fields":["item_name","brand_name","nf_calories","images_front_full_url", "upc"],
@@ -40,29 +40,9 @@ var fetchBody = JSON.stringify({
       "to":maxCalValue
     }
   }
-});
-
-app.get('/menu', (req, res) => {
-
-  fetch(APIURL, {
-    method: 'POST',
-    headers:{
-      'Content-Type': 'application/json',
-    },
-    body: fetchBody
-  }).then(results => {
-    return results.json();
-  })
-  .then(data => {
-    // console.log(data);
-    // console.log(data.hits);
-    // console.log(data.hits[0]);
-    console.log(data.hits[2].fields);
-    res.send(data);
-  })
-});
-
-
+};
+console.log(fetchBody);
+console.log(fetchBody.filters.nf_calories.from)
 app.get('/menu/:goal', (req, res) => {
 
   var avgCal = req.params.goal / 3;
@@ -76,18 +56,21 @@ app.get('/menu/:goal', (req, res) => {
     headers:{
       'Content-Type': 'application/json',
     },
-    body: fetchBody
-  }).then(results => {
-    return results.json();
+    body: JSON.stringify(fetchBody)
+  })
+  .then(results => {
+    if (results.ok) {
+      console.log(`Response Happened: ${results.ok}`)
+      return results.json();
+    } else {
+      throw new Error('Network response failed');
+    }
   })
   .then(data => {
-    // console.log(data);
-    // console.log(data.hits);
-    // console.log(data.hits[0]);
     console.log(data.hits[2].fields);
     res.send(data);
   })
   .catch(err => {
-    console.log('error', err)
+    console.log('Error', err)
   })
 });

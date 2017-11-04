@@ -3,29 +3,6 @@ import { Col, Button } from 'react-bootstrap';
 
 
 class SetGoal extends Component {
-  constructor(){
-    super();
-    this.state = {calorieGoal: ''}
-    console.log(this.state)
-  }
-
-  handleChange = (event) => {
-
-    // var calculatedCalorie = event.target.value
-    this.setState({calorieGoal: event.target.value});
-    console.log(this.state.calorieGoal);
-  }
-
-  handleSubmit = (event) => {
-    if(this.state.calorieGoal < 1200){
-      alert(`Warning: A calorie goal of ${this.state.calorieGoal} is less than the lowest recommended daily calorie intake of 1200. Please put in a minimum goal of 1200 calories.`)
-    }
-    else {
-      alert(`Calorie Goal: ${this.state.calorieGoal}`)
-
-      event.preventDefault()
-    }
-  }
 
   render(){
     return(
@@ -33,7 +10,7 @@ class SetGoal extends Component {
 
         <Col xs={6} xsOffset={2}>
 
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.props.onNewSubmit}>
 
               {/* <label id="text">Set Calorie Goal</label> */}
               <div>
@@ -42,9 +19,7 @@ class SetGoal extends Component {
                   type="text"
                   name="calorieGoal"
                   placeholder="Set Calorie Goal!"
-                  value={this.state.calorieGoal}
-                  onChange={this.handleChange}/>
-
+                  onChange={this.props.onNewUpdate}/>
               </div>
 
 
