@@ -8,15 +8,14 @@ var app = express();
 
 app.use(cors())
 
-const APIURL = 'https://api.nutritionix.com/v1_1/search';
+//Global Variables. Should not be mutated/changed in any way.
+const APIURL = 'https://api.nutritionix.com/v1_1/search',
+      APPID = "f6c1ec63",
+      APPKEY = "75d1892186aa45da19a882eb81ba37ba";
 
 
 var minCalValue = 300;
 var maxCalValue = 500;
-
-//Keys for the API
-const APPID = "f6c1ec63",
-      APPKEY = "75d1892186aa45da19a882eb81ba37ba";
 
 app.listen(process.env.PORT || 3001, () => {
   console.log('server.js working on port 3001')
@@ -43,7 +42,7 @@ var fetchBody = JSON.stringify({
 });
 
 app.post('/setGoal'), (req, res) => {
-  
+
 }
 
 app.get('/menu', (req, res) => {
