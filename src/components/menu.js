@@ -14,7 +14,6 @@ class Menu extends Component{
       itemCalories2:'',
       brandName2:'',
       itemName2:''
-
     }
   };
 

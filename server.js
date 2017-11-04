@@ -8,6 +8,7 @@ var app = express();
 
 app.use(cors())
 
+
 //Global Variables. Should not be mutated/changed in any way.
 const APIURL = 'https://api.nutritionix.com/v1_1/search',
       APPID = "f6c1ec63",
@@ -41,10 +42,6 @@ var fetchBody = JSON.stringify({
   }
 });
 
-app.post('/setGoal'), (req, res) => {
-
-}
-
 app.get('/menu', (req, res) => {
 
   fetch(APIURL, {
@@ -62,5 +59,35 @@ app.get('/menu', (req, res) => {
     // console.log(data.hits[0]);
     console.log(data.hits[2].fields);
     res.send(data);
+  })
+});
+
+
+app.get('/menu/:goal', (req, res) => {
+
+  var avgCal = req.params.goal / 3;
+  var calRange = [avgCal-50, avgCal + 50];
+
+  fetchBody.filters.nf_calories.from = calRange[0];
+  fetchBody.filters.nf_calories.to = calRange[1];
+
+  fetch(APIURL, {
+    method: 'POST',
+    headers:{
+      'Content-Type': 'application/json',
+    },
+    body: fetchBody
+  }).then(results => {
+    return results.json();
+  })
+  .then(data => {
+    // console.log(data);
+    // console.log(data.hits);
+    // console.log(data.hits[0]);
+    console.log(data.hits[2].fields);
+    res.send(data);
+  })
+  .catch(err => {
+    console.log('error', err)
   })
 });
