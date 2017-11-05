@@ -1,29 +1,33 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 const Menu = (props) =>{
 
     return(
       <div>
-        <Col xs={12}>
-          <div>
-            <h1>{props.menuItems.brandName}</h1>
-            <h1>{props.menuItems.itemName}</h1>
-            <h1>{props.menuItems.itemCalories}</h1>
-          </div>
-
-          <div>
-            <h1>{props.menuItems.brandName1}</h1>
-            <h1>{props.menuItems.itemName1}</h1>
-            <h1>{props.menuItems.itemCalories1}</h1>
-          </div>
-
-          <div>
-            <h1>{props.menuItems.brandName2}</h1>
-            <h1>{props.menuItems.itemName2}</h1>
-            <h1>{props.menuItems.itemCalories2}</h1>
-          </div>
-        </Col>
+        <Row className="menu">
+          <Col xs={4}>
+            <div>
+              <h1>{props.menuItems.brandName}</h1>
+              <h2>{props.menuItems.itemName}</h2>
+              <h3>{props.menuItems.itemCalories}</h3>
+            </div>
+          </Col>
+          <Col xs={4}>
+            <div>
+              <h1>{props.menuItems.brandName1}</h1>
+              <h2>{props.menuItems.itemName1}</h2>
+              <h3>{props.menuItems.itemCalories1}</h3>
+            </div>
+          </Col>
+          <Col xs={4}>
+            <div>
+              <h1>{props.menuItems.brandName2}</h1>
+              <h2>{props.menuItems.itemName2}</h2>
+              <h3>{props.menuItems.itemCalories2}</h3>
+            </div>
+          </Col>
+        </Row>
       </div>
     )
 }

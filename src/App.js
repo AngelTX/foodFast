@@ -33,8 +33,6 @@ class App extends Component {
         alert(`Warning: A calorie goal of ${this.state.calorieGoal} is less than the lowest recommended daily calorie intake of 1200. Please put in a minimum goal of 1200 calories.`)
       }
       else {
-        alert(`Calorie Goal: ${this.state.calorieGoal}`)
-
         fetch(`http://localhost:3001/menu/${this.state.calorieGoal}`, {
           method: 'GET',
           headers : {
@@ -47,6 +45,7 @@ class App extends Component {
           return results.json();
         })
         .then(data => {
+
           this.setState({
             itemCalories:data.hits[0].fields.nf_calories,
             brandName:data.hits[0].fields.brand_name,
@@ -63,9 +62,6 @@ class App extends Component {
         event.preventDefault()
       }
     }
-
-
-
 
   render() {
     return (

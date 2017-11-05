@@ -41,8 +41,7 @@ var fetchBody = {
     }
   }
 };
-console.log(fetchBody);
-console.log(fetchBody.filters.nf_calories.from)
+
 app.get('/menu/:goal', (req, res) => {
 
   var avgCal = req.params.goal / 3;
