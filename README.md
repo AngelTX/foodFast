@@ -1,3 +1,28 @@
+List of things to do:
+
+Research API
+  Needs to include:
+    Restaurant Name
+    Menu list with calorie count
+    Location of food
+
+Search container
+  Search buttons component
+  Input Fields
+  3 checkboxes for Breakfast/lunch/Dinner
+
+Menu list
+  Menu containers for each menu item
+    Holds:
+      calorie
+      restaurant
+      item
+
+
+Maybe's - Contains list of saved menu items for later reference
+
+
+
 
 API used:
 

@@ -1,5 +1,5 @@
 body {
-
+  background-color: #3E1B3C;
   padding: 100;
   margin: 100;
 }
@@ -12,7 +12,7 @@ body {
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #d43519;
+  color: #3E1B3C;
   padding-left: .8em;
   font-weight: 800;
 }
@@ -25,12 +25,13 @@ body {
 SET GOAL
 ==================================*/
 .setGoal {
-  background: url('https://i.ebayimg.com/images/g/GskAAOSwrklVBFrH/s-l500.jpg');
+  /*background: url('https://i.ebayimg.com/images/g/GskAAOSwrklVBFrH/s-l500.jpg');*/
     background-size: 3em 3.5em;
+    background-color: #3E1B3C;
 }
 .nav-logo {
-  background-color: white;
-  opacity: .7
+  background-color: #3E1B3C;
+
 }
 
 
@@ -40,10 +41,10 @@ SET GOAL
 MENU ITEMS
 ==================================*/
 .menuItem {
-  background: #59b8c8;
 
   padding: 20 20;
 }
 .menu h1, h2, h3 {
-  font-size: small;
+  /*font-size: small;*/
+  color: #69f4bd;
 }
