@@ -18,6 +18,7 @@ const APIURL = 'https://api.nutritionix.com/v1_1/search',
 // No longer required: 'minCalValue' & 'maxCalValue', may delete
 var minCalValue = 300;
 var maxCalValue = 500;
+var mealType = '';
 
 app.listen(process.env.PORT || 3001, () => {
   console.log('server.js working on port 3001')
@@ -31,7 +32,7 @@ var fetchBody = {
     "field":"_score",
     "order":"desc"
   },
-  "query": "breakfast",
+  "query": mealType,
   "offset":0,
   "limit":3,
   "filters":{
@@ -43,11 +44,77 @@ var fetchBody = {
   }
 };
 
-app.get('/menu/:goal', (req, res) => {
+app.get('/breakfast/:goal', (req, res) => {
 
   var avgCal = req.params.goal / 3;
   var calRange = [avgCal-50, avgCal + 50];
 
+  fetchBody.filters.nf_calories.from = calRange[0];
+  fetchBody.filters.nf_calories.to = calRange[1];
+  fetchBody.query = "breakfast";
+  
+  fetch(APIURL, {
+    method: 'POST',
+    headers:{
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(fetchBody)
+  })
+  .then(results => {
+    if (results.ok) {
+      console.log(`Response Happened: ${results.ok}`)
+      return results.json();
+    } else {
+      throw new Error('Network response failed');
+    }
+  })
+  .then(data => {
+    console.log(data.hits[2].fields);
+    res.send(data);
+  })
+  .catch(err => {
+    console.log('Error', err)
+  })
+});
+
+app.get('/lunch/:goal', (req, res) => {
+
+  var avgCal = req.params.goal / 3;
+  var calRange = [avgCal-50, avgCal + 50];
+
+  fetchBody.filters.nf_calories.from = calRange[0];
+  fetchBody.filters.nf_calories.to = calRange[1];
+  fetchBody.query = "lunch";
+  fetch(APIURL, {
+    method: 'POST',
+    headers:{
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(fetchBody)
+  })
+  .then(results => {
+    if (results.ok) {
+      console.log(`Response Happened: ${results.ok}`)
+      return results.json();
+    } else {
+      throw new Error('Network response failed');
+    }
+  })
+  .then(data => {
+    console.log(data.hits[2].fields);
+    res.send(data);
+  })
+  .catch(err => {
+    console.log('Error', err)
+  })
+});
+
+app.get('/dinner/:goal', (req, res) => {
+  mealType = 'dinner';
+
+  var avgCal = req.params.goal / 3;
+  var calRange = [avgCal-50, avgCal + 50];
+  fetchBody.query = "dinner";
   fetchBody.filters.nf_calories.from = calRange[0];
   fetchBody.filters.nf_calories.to = calRange[1];
 
