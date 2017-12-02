@@ -1,27 +1,54 @@
 import React from 'react';
 
 const MealCategory = (props) =>{
-
+  console.log(props)
+  const breakfast = props.items.breakfast;
     return(
       <div>
         <div>
           <h1>{props.category}</h1>
-          <div>
-            <h1>{props.items.brandName1}</h1>
-            {/* <h1>{props.items.breakfast[0].fields.brand_name}</h1> */}
-            <h2>{props.items.itemName1}</h2>
-            <h3>{props.items.itemCalories1}</h3>
-          </div>
-          <div>
-            <h1>{props.items.brandName2}</h1>
-            <h2>{props.items.itemName2}</h2>
-            <h3>{props.items.itemCalories2}</h3>
-          </div>
-          <div>
-            <h1>{props.items.brandName}</h1>
-            <h2>{props.items.itemName}</h2>
-            <h3>{props.items.itemCalories}</h3>
-          </div>
+            <div>
+              {breakfast ?
+                <h1>{breakfast[0].fields.brand_name}</h1>
+                : null
+              }
+              {breakfast ?
+                <h1>{breakfast[0].fields.item_name}</h1>
+                : null
+              }
+              {breakfast ?
+                <h1>{breakfast[0].fields.nf_calories}</h1>
+                : null
+              }
+            </div>
+            <div>
+              {breakfast ?
+                <h1>{breakfast[1].fields.brand_name}</h1>
+                : null
+              }
+              {breakfast ?
+                <h1>{breakfast[1].fields.item_name}</h1>
+                : null
+              }
+              {breakfast ?
+                <h1>{breakfast[1].fields.nf_calories}</h1>
+                : null
+              }
+            </div>
+            <div>
+              {breakfast ?
+                <h1>{breakfast[2].fields.brand_name}</h1>
+                : null
+              }
+              {breakfast ?
+                <h1>{breakfast[2].fields.item_name}</h1>
+                : null
+              }
+              {breakfast ?
+                <h1>{breakfast[2].fields.nf_calories}</h1>
+                : null
+              }
+            </div>
         </div>
       </div>
     )
