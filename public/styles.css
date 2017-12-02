@@ -1,7 +1,7 @@
 body {
   background-color: #3E1B3C;
-  padding: 100;
-  margin: 100;
+  padding: 0;
+  margin: 0;
 }
 
 #input {
@@ -28,13 +28,15 @@ SET GOAL
   /*background: url('https://i.ebayimg.com/images/g/GskAAOSwrklVBFrH/s-l500.jpg');*/
     background-size: 3em 3.5em;
     background-color: #3E1B3C;
+
 }
+
 .nav-logo {
   background-color: #3E1B3C;
+  padding-top: 15px;
+  padding-bottom: 20px;
 
 }
-
-
 
 
 /*=================================
@@ -47,4 +49,7 @@ MENU ITEMS
 .menu h1, h2, h3 {
   /*font-size: small;*/
   color: #69f4bd;
+  margin: auto;
+  width: 50%;
+  padding-top: 20px;
 }

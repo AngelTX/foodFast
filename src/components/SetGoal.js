@@ -9,14 +9,18 @@ class SetGoal extends Component {
   render(){
     return(
       <header>
-        <Row className="setGoal">
-          <div className="nav-logo">
-          <Col xs={2} >
-            <img src={logo} height="100" width="150" />
-          </Col>
-        </div>
 
-          <Col xs={4}>
+          <div className="nav-logo">
+            <Row>
+              <Col xs={12} xsOffset={5}>
+                <img src={logo} height="100" width="150" />
+              </Col>
+            </Row>
+          </div>
+
+        <div className="setGoal">
+          <Row>
+            <Col xs={12} xsOffset={4}>
               <form onSubmit={this.props.onNewSubmit}>
                 <div>
                   <input
@@ -29,7 +33,9 @@ class SetGoal extends Component {
                 <Button bsStyle="info" type="submit" id="button">Submit</Button>
               </form>
             </Col>
-        </Row>
+          </Row>
+        </div>
+
       </header>
     )
   }
