@@ -1,9 +1,9 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 
-import BreakfastContainer from './Breakfast.js';
-import LunchContainer from './Lunch.js';
-import DinnerContainer from './Dinner.js';
+import MealCategory from './MealCategory.js';
+// import LunchContainer from './Lunch.js';
+// import DinnerContainer from './Dinner.js';
 const MenuContainer = (props) =>{
 
     return(
@@ -12,21 +12,21 @@ const MenuContainer = (props) =>{
           <Col xs={4}>
             <Col xs={12}>
               <div>
-                <BreakfastContainer items={props.menuItems}/>
+                <MealCategory items={props.menuItems} category={"Breakfast"}/>
               </div>
             </Col><br/>
           </Col>
           <Col xs={4}>
             <Col xs={12}>
               <div>
-                <LunchContainer items={props.menuItems}/>
+                <MealCategory items={props.menuItems} category={"Lunch"}/>
               </div>
             </Col><br/>
           </Col>
           <Col xs={4}>
             <Col xs={12}>
               <div>
-                <DinnerContainer items={props.menuItems}/>
+                <MealCategory items={props.menuItems} category={"Dinner"}/>
               </div>
             </Col><br/>
           </Col>

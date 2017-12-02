@@ -1,12 +1,12 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 
-const BreakfastContainer = (props) =>{
+const MealCategory = (props) =>{
 
     return(
       <div>
         <div>
-          <h1>Breakfast</h1>
+          <h1>{props.category}</h1>
           <div>
             <h1>{props.items.brandName1}</h1>
             <h2>{props.items.itemName1}</h2>
@@ -27,4 +27,4 @@ const BreakfastContainer = (props) =>{
     )
 }
 
-export default BreakfastContainer;
+export default MealCategory;

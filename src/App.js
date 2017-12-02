@@ -3,11 +3,6 @@ import React, { Component } from 'react';
 //Components
 import SetGoal from './components/SetGoal.js';
 import MenuContainer from './containers/MenuContainer.js';
-// import BreakfastContainer from './containers/Breakfast.js';
-// import LunchContainer from './containers/Lunch.js';
-// import DinnerContainer from './containers/Dinner.js';
-
-
 
 class App extends Component {
   constructor() {
