@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 
 //Components
 import SetGoal from './components/SetGoal.js';
-import Menu from './components/menu.js';
+import BreakfastContainer from './containers/Breakfast.js';
+import LunchContainer from './containers/Lunch.js';
+import DinnerContainer from './containers/Dinner.js';
+
+
 
 class App extends Component {
   constructor() {
@@ -31,8 +35,7 @@ class App extends Component {
     handleSubmit = (event) => {
       if(this.state.calorieGoal < 1200){
         alert(`Warning: A calorie goal of ${this.state.calorieGoal} is less than the lowest recommended daily calorie intake of 1200. Please put in a minimum goal of 1200 calories.`)
-      }
-      else {
+      } else {
         fetch(`http://localhost:3001/menu/${this.state.calorieGoal}`, {
           method: 'GET',
           headers : {
@@ -67,7 +70,9 @@ class App extends Component {
     return (
       <div>
         <SetGoal onNewUpdate={this.handleChange} onNewSubmit={this.handleSubmit}/>
-        <Menu menuItems={this.state}/>
+        <BreakfastContainer menuItems={this.state}/>
+        <LunchContainer menuItems={this.state}/>
+        <DinnerContainer menuItems={this.state}/>
       </div>
     );
   }

@@ -6,15 +6,16 @@ const fetch = require('node-fetch');
 var cors = require('cors');
 var app = express();
 
+// For development use only 'CORS'
 app.use(cors())
 
 
-//Global Variables. Should not be mutated/changed in any way.
+// Global Variables. Should not be mutated/changed in any way.
 const APIURL = 'https://api.nutritionix.com/v1_1/search',
       APPID = "f6c1ec63",
       APPKEY = "75d1892186aa45da19a882eb81ba37ba";
 
-
+// No longer required: 'minCalValue' & 'maxCalValue', may delete
 var minCalValue = 300;
 var maxCalValue = 500;
 
