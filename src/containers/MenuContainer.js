@@ -12,29 +12,26 @@ const MenuContainer = (props) =>{
           <Col xs={4}>
             <Col xs={12}>
               <div>
-                <BreakfastContainer menuItems={props.state}/>
+                <BreakfastContainer items={props.menuItems}/>
               </div>
             </Col><br/>
           </Col>
           <Col xs={4}>
             <Col xs={12}>
               <div>
-                <DinnerContainer menuItems={props.state}/>
+                <LunchContainer items={props.menuItems}/>
               </div>
             </Col><br/>
           </Col>
           <Col xs={4}>
             <Col xs={12}>
               <div>
-                <LunchContainer menuItems={props.state}/>
+                <DinnerContainer items={props.menuItems}/>
               </div>
             </Col><br/>
           </Col>
         </Row>
       </div>
-
-
-
       </div>
     )
 }
