@@ -8,17 +8,21 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      calorieGoal:'',
-      itemCalories:'',
-      brandName:'',
-      itemName:'',
-      itemCalories1:'',
-      brandName1:'',
-      itemName1:'',
-      itemCalories2:'',
-      brandName2:'',
-      itemName2:''
-    }
+      breakfast:{},
+      lunch:{},
+      dinner:{}}
+    // this.state = {
+    //   calorieGoal:'',
+    //   itemCalories:'',
+    //   brandName:'',
+    //   itemName:'',
+    //   itemCalories1:'',
+    //   brandName1:'',
+    //   itemName1:'',
+    //   itemCalories2:'',
+    //   brandName2:'',
+    //   itemName2:''
+    // }
   };
 
     handleChange = (event) => {
@@ -45,17 +49,19 @@ class App extends Component {
         })
         .then(data => {
 
-          this.setState({
-            itemCalories:data.hits[0].fields.nf_calories,
-            brandName:data.hits[0].fields.brand_name,
-            itemName:data.hits[0].fields.item_name,
-            itemCalories1:data.hits[1].fields.nf_calories,
-            brandName1:data.hits[1].fields.brand_name,
-            itemName1:data.hits[1].fields.item_name,
-            itemCalories2:data.hits[2].fields.nf_calories,
-            brandName2:data.hits[2].fields.brand_name,
-            itemName2:data.hits[2].fields.item_name
-            });
+          this.setState({breakfast:data.hits});
+
+          // this.setState({
+          //   itemCalories:data.hits[0].fields.nf_calories,
+          //   brandName:data.hits[0].fields.brand_name,
+          //   itemName:data.hits[0].fields.item_name,
+          //   itemCalories1:data.hits[1].fields.nf_calories,
+          //   brandName1:data.hits[1].fields.brand_name,
+          //   itemName1:data.hits[1].fields.item_name,
+          //   itemCalories2:data.hits[2].fields.nf_calories,
+          //   brandName2:data.hits[2].fields.brand_name,
+          //   itemName2:data.hits[2].fields.item_name
+          //   });
         })
 
         event.preventDefault()

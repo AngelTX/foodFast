@@ -1,5 +1,4 @@
 import React from 'react';
-import { Col, Row } from 'react-bootstrap';
 
 const MealCategory = (props) =>{
 
@@ -9,6 +8,7 @@ const MealCategory = (props) =>{
           <h1>{props.category}</h1>
           <div>
             <h1>{props.items.brandName1}</h1>
+            {/* <h1>{props.items.breakfast[0].fields.brand_name}</h1> */}
             <h2>{props.items.itemName1}</h2>
             <h3>{props.items.itemCalories1}</h3>
           </div>
