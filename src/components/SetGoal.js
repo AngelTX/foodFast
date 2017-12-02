@@ -13,7 +13,12 @@ class SetGoal extends Component {
           <div className="nav-logo">
             <Row>
               <Col xs={12} xsOffset={5}>
-                <img src={logo} height="100" width="150" />
+                <img
+                  src={logo}
+                  alt='logo'
+                  height="100"
+                  width="150"
+                />
               </Col>
             </Row>
           </div>
