@@ -16,9 +16,6 @@ const APIURL = 'https://api.nutritionix.com/v1_1/search',
       APPKEY = "75d1892186aa45da19a882eb81ba37ba";
 
 // No longer required: 'minCalValue' & 'maxCalValue', may delete
-var minCalValue = 300;
-var maxCalValue = 500;
-var mealType = '';
 
 app.listen(process.env.PORT || 3001, () => {
   console.log('server.js working on port 3001')
@@ -32,18 +29,19 @@ var fetchBody = {
     "field":"_score",
     "order":"desc"
   },
-  "query": mealType,
+  "query": '',
   "offset":0,
   "limit":3,
   "filters":{
     "item_type":1,
     "nf_calories":{
-      "from":minCalValue,
-      "to":maxCalValue
+      "from":'',
+      "to":''
     }
   }
 };
 
+//When this endpoint is called, produces results for breakfast queries
 app.get('/breakfast/:goal', (req, res) => {
 
   var avgCal = req.params.goal / 3;
@@ -52,7 +50,7 @@ app.get('/breakfast/:goal', (req, res) => {
   fetchBody.filters.nf_calories.from = calRange[0];
   fetchBody.filters.nf_calories.to = calRange[1];
   fetchBody.query = "breakfast";
-  
+
   fetch(APIURL, {
     method: 'POST',
     headers:{
@@ -77,6 +75,7 @@ app.get('/breakfast/:goal', (req, res) => {
   })
 });
 
+//When this endpoint is called, produces results for lunch queries.
 app.get('/lunch/:goal', (req, res) => {
 
   var avgCal = req.params.goal / 3;
@@ -109,6 +108,7 @@ app.get('/lunch/:goal', (req, res) => {
   })
 });
 
+//When this endpoint is called, produces results for dinner queries
 app.get('/dinner/:goal', (req, res) => {
   mealType = 'dinner';
 
