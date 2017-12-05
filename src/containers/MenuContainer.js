@@ -4,8 +4,9 @@ import { Col, Row } from 'react-bootstrap';
 import Breakfast from './Breakfast.js';
 import Lunch from './Lunch.js';
 import Dinner from './Dinner.js';
-const MenuContainer = (props) =>{
+import MenuItem from '../components/MenuItem.js';
 
+const MenuContainer = (props) =>{
     return(
       <div>
         <div>
@@ -13,14 +14,14 @@ const MenuContainer = (props) =>{
             <Col xs={4}>
               <Col xs={12}>
                 <div>
-                  <Breakfast items={props.menuItems} category={"Breakfast"}/>
+                  <MenuItem title={"breakfast"} items={props.menuItems.breakfast}/>
                 </div>
               </Col><br/>
             </Col>
             <Col xs={4}>
               <Col xs={12}>
                 <div>
-                  <Lunch items={props.menuItems}/>
+                  <MenuItem title={"lunch"} items={props.menuItems.lunch}/>
                 </div>
               </Col><br/>
             </Col>
