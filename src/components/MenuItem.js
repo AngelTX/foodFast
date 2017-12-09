@@ -1,8 +1,7 @@
 import React from 'react';
 
 const MenuItem = (props) =>{
-  // console.log(props)
-  // const foodCategory = props.category;
+  
   const menuItem = props.items;
 
     return(
