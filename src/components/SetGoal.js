@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Button, Row, Image } from 'react-bootstrap';
+import { Col, Button, Row } from 'react-bootstrap';
 import logo from './logo.png';
 
 class SetGoal extends Component {

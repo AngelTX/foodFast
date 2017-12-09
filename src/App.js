@@ -37,8 +37,6 @@ class App extends Component {
             }
           })
           .then(results => {
-            console.log(results);
-            console.log('category is', category[i])
             return results.json();
 
           })
