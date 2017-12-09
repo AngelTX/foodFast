@@ -42,81 +42,14 @@ var fetchBody = {
 };
 
 //When this endpoint is called, produces results for breakfast queries
-app.get('/breakfast/:goal', (req, res) => {
+app.get('/:goal/:category', (req, res) => {
 
   var avgCal = req.params.goal / 3;
   var calRange = [avgCal-50, avgCal + 50];
 
   fetchBody.filters.nf_calories.from = calRange[0];
   fetchBody.filters.nf_calories.to = calRange[1];
-  fetchBody.query = "breakfast";
-
-  fetch(APIURL, {
-    method: 'POST',
-    headers:{
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(fetchBody)
-  })
-  .then(results => {
-    if (results.ok) {
-      console.log(`Response Happened: ${results.ok}`)
-      return results.json();
-    } else {
-      throw new Error('Network response failed');
-    }
-  })
-  .then(data => {
-    console.log(data.hits[2].fields);
-    res.send(data);
-  })
-  .catch(err => {
-    console.log('Error', err)
-  })
-});
-
-//When this endpoint is called, produces results for lunch queries.
-app.get('/lunch/:goal', (req, res) => {
-
-  var avgCal = req.params.goal / 3;
-  var calRange = [avgCal-50, avgCal + 50];
-
-  fetchBody.filters.nf_calories.from = calRange[0];
-  fetchBody.filters.nf_calories.to = calRange[1];
-  fetchBody.query = "lunch";
-  fetch(APIURL, {
-    method: 'POST',
-    headers:{
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(fetchBody)
-  })
-  .then(results => {
-    if (results.ok) {
-      console.log(`Response Happened: ${results.ok}`)
-      return results.json();
-    } else {
-      throw new Error('Network response failed');
-    }
-  })
-  .then(data => {
-    console.log(data.hits[2].fields);
-    res.send(data);
-  })
-  .catch(err => {
-    console.log('Error', err)
-  })
-});
-
-//When this endpoint is called, produces results for dinner queries
-app.get('/dinner/:goal', (req, res) => {
-  mealType = 'dinner';
-
-  var avgCal = req.params.goal / 3;
-  var calRange = [avgCal-50, avgCal + 50];
-  fetchBody.query = "dinner";
-  fetchBody.filters.nf_calories.from = calRange[0];
-  fetchBody.filters.nf_calories.to = calRange[1];
+  fetchBody.query = req.params.category;
 
   fetch(APIURL, {
     method: 'POST',

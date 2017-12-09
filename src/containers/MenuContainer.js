@@ -1,9 +1,7 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 
-import Breakfast from './Breakfast.js';
-import Lunch from './Lunch.js';
-import Dinner from './Dinner.js';
+
 import MenuItem from '../components/MenuItem.js';
 
 const MenuContainer = (props) =>{
@@ -28,7 +26,7 @@ const MenuContainer = (props) =>{
             <Col xs={4}>
               <Col xs={12}>
                 <div>
-                  <Dinner items={props.menuItems}/>
+                  <MenuItem title={"dinner"} items={props.menuItems.dinner}/>
                 </div>
               </Col><br/>
             </Col>

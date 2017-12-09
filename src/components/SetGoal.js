@@ -4,8 +4,6 @@ import logo from './logo.png';
 
 class SetGoal extends Component {
 
-
-
   render(){
     return(
       <header>
