@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Button, Row } from 'react-bootstrap';
+import { Col, Button, Row, } from 'react-bootstrap';
 import logo from './logo.png';
 
 class SetGoal extends Component {
@@ -7,20 +7,18 @@ class SetGoal extends Component {
   render(){
     return(
       <header>
-
-          <div className="nav-logo">
-            <Row>
-              <Col xs={12} xsOffset={5}>
-                <img
-                  src={logo}
-                  alt='logo'
-                  height="100"
-                  width="150"
-                />
-              </Col>
-            </Row>
-          </div>
-
+        <div className="nav-logo">
+          <Row>
+            <Col xs={12} xsOffset={5}>
+              <img
+                src={logo}
+                alt='logo'
+                height="100"
+                width="150"
+              />
+            </Col>
+          </Row>
+        </div>
         <div className="setGoal">
           <Row>
             <Col xs={12} xsOffset={4}>
@@ -38,7 +36,6 @@ class SetGoal extends Component {
             </Col>
           </Row>
         </div>
-
       </header>
     )
   }

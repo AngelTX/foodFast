@@ -23,39 +23,37 @@ class App extends Component {
     }
 
     handleSubmit = (event) => {
-      console.log('handleSubmit');
-      if(this.state.calorieGoal < 1200){
-        alert(`Warning: A calorie goal of ${this.state.calorieGoal} is less than the lowest recommended daily calorie intake of 1200. Please put in a minimum goal of 1200 calories.`)
-      } else {
-
-        for (var i = 0; i < category.length; i++) {
-          fetch(`http://localhost:3001/${this.state.calorieGoal}/${category[i]}`, {
-            method: 'GET',
-            headers : {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-            }
-          })
-          .then(results => {
-            return results.json();
-
-          })
-          .then(data => {
-            console.log('data ', data);
-            var day = category[--i];
-            this.setState({
-              [day]: data.hits
-            });
-          })
-        }
-        event.preventDefault()
+      for (var i = 0; i < category.length; i++) {
+        this.updateTheState(i);
       }
+      event.preventDefault()
+    }
+
+    updateTheState = (i) => {
+      fetch(`http://localhost:3001/${this.state.calorieGoal}/${category[i]}`, {
+        method: 'GET',
+        headers : {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      })
+      .then(results => {
+        console.log(results);
+        return results.json();
+      })
+      .then(data => {
+        console.log('data ', data);
+        var day = category[i];
+        this.setState({
+          [day]: data.hits
+        });
+      })
     }
 
   render() {
     return (
       <div>
-        <SetGoal onNewUpdate={this.handleChange} onNewSubmit={this.handleSubmit}/>
+        <SetGoal onNewUpdate={this.handleChange} onNewSubmit={this.handleSubmit} update={this.updateTheState}/>
         <MenuContainer menuItems={this.state}/>
       </div>
     );
