@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import CheckboxExampleSimple from './components/Checkbox';
 
 //Components
 import SetGoal from './components/SetGoal.js';
@@ -34,7 +30,7 @@ class App extends Component {
     }
 
     updateTheState = (i) => {
-      fetch(`http://localhost:3001/${this.state.calorieGoal}/${category[i]}`, {
+      fetch(`http://localhost:3000/${this.state.calorieGoal}/${category[i]}`, {
         method: 'GET',
         headers : {
           'Content-Type': 'application/json',
@@ -56,10 +52,10 @@ class App extends Component {
 
   render() {
     return (
-      <MuiThemeProvider>
+      <div>
         <SetGoal onNewUpdate={this.handleChange} onNewSubmit={this.handleSubmit} update={this.updateTheState}/>
         <MenuContainer menuItems={this.state}/>
-      </MuiThemeProvider>
+      </div>
     );
   }
 }

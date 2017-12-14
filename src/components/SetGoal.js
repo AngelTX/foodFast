@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
 import { Col, Button, Row, } from 'react-bootstrap';
+import TextField from 'material-ui/TextField';
 import logo from './logo.png';
 
 import CheckboxExampleSimple from '../components/Checkbox.js';
+
+const Input = () => (
+  <div>
+    <TextField
+      hintText="ie: 1600"
+      floatingLabelText="Set Calorie Goal"
+    />
+  </div>
+);
 
 class SetGoal extends Component {
 
@@ -26,11 +36,10 @@ class SetGoal extends Component {
             <Col xs={12} xsOffset={4}>
               <form onSubmit={this.props.onNewSubmit}>
                 <div>
-                  <input
+                  <Input
                     id="input"
                     type="text"
                     name="calorieGoal"
-                    placeholder="Set Calorie Goal!"
                     onChange={this.props.onNewUpdate}/>
                 </div>
                 <Button bsStyle="info" type="submit" id="button">Submit</Button>
