@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import CheckboxExampleSimple from './components/Checkbox';
 
 //Components
 import SetGoal from './components/SetGoal.js';
@@ -52,10 +56,10 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <MuiThemeProvider>
         <SetGoal onNewUpdate={this.handleChange} onNewSubmit={this.handleSubmit} update={this.updateTheState}/>
         <MenuContainer menuItems={this.state}/>
-      </div>
+      </MuiThemeProvider>
     );
   }
 }

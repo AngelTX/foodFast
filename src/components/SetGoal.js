@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Col, Button, Row, } from 'react-bootstrap';
 import logo from './logo.png';
 
+import CheckboxExampleSimple from '../components/Checkbox.js';
+
 class SetGoal extends Component {
 
   render(){
@@ -32,6 +34,9 @@ class SetGoal extends Component {
                     onChange={this.props.onNewUpdate}/>
                 </div>
                 <Button bsStyle="info" type="submit" id="button">Submit</Button>
+
+                <CheckboxExampleSimple />
+
               </form>
             </Col>
           </Row>
