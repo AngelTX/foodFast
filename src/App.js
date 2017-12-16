@@ -5,6 +5,7 @@ import SetGoal from './components/SetGoal.js';
 import MenuContainer from './containers/MenuContainer.js';
 
 const category = ['breakfast', 'lunch', 'dinner'];
+
 class App extends Component {
   constructor() {
     super();
@@ -19,14 +20,14 @@ class App extends Component {
 
       // var calculatedCalorie = event.target.value
       this.setState({calorieGoal: event.target.value});
-      console.log(this.state.calorieGoal);
+      console.log('WORKING', this.state.calorieGoal);
     }
 
     handleSubmit = (event) => {
-      for (var i = 0; i < category.length; i++) {
-        this.updateTheState(i);
-      }
       event.preventDefault()
+        for (var i = 0; i < category.length; i++) {
+          this.updateTheState(i);
+        }
     }
 
     updateTheState = (i) => {
@@ -53,7 +54,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <SetGoal onNewUpdate={this.handleChange} onNewSubmit={this.handleSubmit} update={this.updateTheState}/>
+        <SetGoal onChange={this.handleChange} onSubmit={this.handleSubmit} update={this.updateTheState}/>
         <MenuContainer menuItems={this.state}/>
       </div>
     );

@@ -25,7 +25,7 @@ const styles = {
 
 };
 
-class CheckboxExampleSimple extends Component {
+class Checkboxs extends Component {
   state = {
     checked: false,
   }
@@ -67,7 +67,7 @@ class CheckboxExampleSimple extends Component {
   }
 }
 
-export default CheckboxExampleSimple;
+export default Checkboxs;
 
 
 
