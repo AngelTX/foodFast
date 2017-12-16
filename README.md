@@ -1,28 +1,23 @@
-List of things to do:
+Things to do:
+Load more feature
 
-Research API
-  Needs to include:
-    Restaurant Name
-    Menu list with calorie count
-    Location of food
+1 Delete line 34 of server.js so that it returns 10 results
 
-Search container
-  Search buttons component
-  Input Fields
-  3 checkboxes for Breakfast/lunch/Dinner
+2 Display 3 results at first, with a load more button.
 
-Menu list
-  Menu containers for each menu item
-    Holds:
-      calorie
-      restaurant
-      item
+3 When load more is hit, 3 more options are displayed dynamically.
 
+Since the state already contains 10 items per category, we dont need to update any states, just dynamically add additional menu items when load more is clicked.
 
-Maybe's - Contains list of saved menu items for later reference
+Something along the lines of this: https://stackoverflow.com/questions/36651583/dynamically-add-child-components-in-react
 
+or
 
+https://kyleshevlin.com/how-to-dynamically-render-react-components/
 
+This will all need to happen within MenuContainer/MenuItem
+
+Menu container will need to have the states that update, with menu items rendering the props that are passed in.
 
 API used:
 
