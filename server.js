@@ -12,8 +12,8 @@ app.use(cors())
 
 // Global Variables. Should not be mutated/changed in any way.
 const APIURL = 'https://api.nutritionix.com/v1_1/search',
-      APPID = "f6c1ec63",
-      APPKEY = "75d1892186aa45da19a882eb81ba37ba";
+      APPID = "0b4e5619",
+      APPKEY = "223dec7705dcadbdfd9fdbc9f173c111";
 
 // No longer required: 'minCalValue' & 'maxCalValue', may delete
 
@@ -22,8 +22,8 @@ app.listen(process.env.PORT || 3001, () => {
 });
 
 var fetchBody = {
-  "appId":"f6c1ec63",
-  "appKey":"75d1892186aa45da19a882eb81ba37ba",
+  "appId":"0b4e5619",
+  "appKey":"223dec7705dcadbdfd9fdbc9f173c111",
   "fields":["item_name","brand_name","nf_calories","images_front_full_url", "upc"],
   "sort":{
     "field":"_score",
@@ -31,7 +31,6 @@ var fetchBody = {
   },
   "query": '',
   "offset":0,
-  "limit":3,
   "filters":{
     "item_type":1,
     "nf_calories":{

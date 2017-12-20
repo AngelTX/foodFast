@@ -1,25 +1,17 @@
 import React from 'react';
 
 const MenuItem = (props) =>{
-  
+
   const menuItem = props.items;
+  const i = props.index;
 
     return(
       <div>
-          <h1>{props.title}</h1>
-          {menuItem ?
-            <h1>{menuItem[0].fields.brand_name}</h1>
-            : null
-          }
-          {menuItem ?
-            <h1>{menuItem[0].fields.item_name}</h1>
-            : null
-          }
-          {menuItem ?
-            <h1>{menuItem[0].fields.nf_calories}</h1>
-            : null
-          }
+            <h1>{menuItem[i].fields.brand_name}</h1>
 
+            <h1>{menuItem[i].fields.item_name}</h1>
+
+            <h1>{menuItem[i].fields.nf_calories}</h1>
       </div>
     )
 }

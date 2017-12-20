@@ -53,7 +53,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <SetGoal onNewUpdate={this.handleChange} onNewSubmit={this.handleSubmit} update={this.updateTheState}/>
+        <SetGoal onNewUpdate={this.handleChange} onNewSubmit={this.handleSubmit}/>
         <MenuContainer menuItems={this.state}/>
       </div>
     );
