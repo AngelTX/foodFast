@@ -6,11 +6,29 @@ import MenuItem from '../components/MenuItem.js';
 
 class MenuContainer extends Component {
 
-  createMenu = (props) => {
+  createBreakfastMenu = (props) => {
 
     let menu = []
     for (var i = 0; i < this.props.menuItems.breakfast.length; i++){
-      menu.push(<MenuItem title={"breakfast"} items={this.props.menuItems.breakfast} index={i}/>)
+      menu.push(<MenuItem items={this.props.menuItems.breakfast} index={i}/>)
+    }
+    return menu;
+  };
+
+  createLunchMenu = (props) => {
+
+    let menu = []
+    for (var i = 0; i < this.props.menuItems.breakfast.length; i++){
+      menu.push(<MenuItem items={this.props.menuItems.lunch} index={i}/>)
+    }
+    return menu;
+  };
+
+  createDinnerMenu = (props) => {
+
+    let menu = []
+    for (var i = 0; i < this.props.menuItems.breakfast.length; i++){
+      menu.push(<MenuItem items={this.props.menuItems.dinner} index={i}/>)
     }
     return menu;
   };
@@ -25,7 +43,7 @@ class MenuContainer extends Component {
                 <div>
                 <h1>Breakfast</h1>
                 {this.props.menuItems.breakfast ?
-                  this.createMenu()
+                  this.createBreakfastMenu()
                   : <h1>null</h1>
                 }
                 </div>
@@ -37,7 +55,7 @@ class MenuContainer extends Component {
                 <div>
                 <h1>Lunch</h1>
                 {this.props.menuItems.breakfast ?
-                  this.createMenu()
+                  this.createLunchMenu()
                   : <h1>null</h1>
                 }
                 </div>
@@ -49,7 +67,7 @@ class MenuContainer extends Component {
                 <div>
                 <h1>Dinner</h1>
                 {this.props.menuItems.breakfast ?
-                  this.createMenu()
+                  this.createDinnerMenu()
                   : <h1>null</h1>
                 }
                 </div>
