@@ -1,19 +1,23 @@
 import React from 'react';
 
-const MenuItem = (props) =>{
+const MenuItem = (menuArray) =>{
 
-  const menuItem = props.items;
-  const i = props.index;
+  itemArray = menuArray.map(newComp)
 
     return(
       <div>
-            <h1>{menuItem[i].fields.brand_name}</h1>
+            <h1>{menuArray.fields.brand_name}</h1>
 
-            <h1>{menuItem[i].fields.item_name}</h1>
+            <h1>{menuArray.fields.item_name}</h1>
 
-            <h1>{menuItem[i].fields.nf_calories}</h1>
+            <h1>{menuArray.fields.nf_calories}</h1>
       </div>
     )
+}
+
+const newComp = () =>{
+
+
 }
 
 export default MenuItem;
