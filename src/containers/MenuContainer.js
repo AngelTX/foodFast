@@ -54,7 +54,7 @@ class MenuContainer extends Component {
               <Col xs={12}>
                 <div>
                 <h1>Lunch</h1>
-                {this.props.menuItems.breakfast ?
+                {this.props.menuItems.lunch ?
                   this.createLunchMenu()
                   : <h1>null</h1>
                 }
@@ -66,7 +66,7 @@ class MenuContainer extends Component {
               <Col xs={12}>
                 <div>
                 <h1>Dinner</h1>
-                {this.props.menuItems.breakfast ?
+                {this.props.menuItems.dinner ?
                   this.createDinnerMenu()
                   : <h1>null</h1>
                 }
