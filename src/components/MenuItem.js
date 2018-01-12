@@ -6,12 +6,12 @@ const MenuItem = (props) =>{
   const i = props.index;
 
     return(
-      <div>
-            <h1>{menuItem[i].fields.brand_name}</h1>
+      <div className="card">
+          <h1>{menuItem[i].fields.nf_calories}</h1>
 
-            <h1>{menuItem[i].fields.item_name}</h1>
+          <h2>{menuItem[i].fields.item_name}</h2>
 
-            <h1>{menuItem[i].fields.nf_calories}</h1>
+          <h3>{menuItem[i].fields.brand_name}</h3>
       </div>
     )
 }

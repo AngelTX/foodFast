@@ -21,11 +21,11 @@ body {
   width: 25em;
   height: 2.5em;
 }
+
 /*=================================
 SET GOAL
 ==================================*/
 .setGoal {
-  /*background: url('https://i.ebayimg.com/images/g/GskAAOSwrklVBFrH/s-l500.jpg');*/
     background-size: 3em 3.5em;
     background-color: #3E1B3C;
 
@@ -43,13 +43,27 @@ SET GOAL
 MENU ITEMS
 ==================================*/
 .menuItem {
-
   padding: 20 20;
 }
+
 .menu h1, h2, h3 {
-  /*font-size: small;*/
+  /* font-size: small; */
   color: #69f4bd;
   margin: auto;
   width: 50%;
   padding-top: 20px;
+}
+
+.menu h2 {
+  font-size: 20px;
+}
+
+.slot {
+  background-color: #3E1B3C;
+}
+
+.card h1, h2, h3{
+  background-color: #3E1B3C;
+  border-style: solid;
+  font-size: 12px;
 }

@@ -10,17 +10,15 @@ var app = express();
 app.use(cors())
 
 
-// Global Variables. Should not be mutated/changed in any way.
-const APIURL = 'https://api.nutritionix.com/v1_1/search',
-      APPID = "0b4e5619",
-      APPKEY = "223dec7705dcadbdfd9fdbc9f173c111";
+// URL for quering for food results when passed the fetchBody object.
+const APIURL = 'https://api.nutritionix.com/v1_1/search';
 
-// No longer required: 'minCalValue' & 'maxCalValue', may delete
 
 app.listen(process.env.PORT || 3001, () => {
   console.log('server.js working on port 3001')
 });
 
+//Object that needs to be passed as a body to the APIURL for search for food based on params set by user input.
 var fetchBody = {
   "appId":"0b4e5619",
   "appKey":"223dec7705dcadbdfd9fdbc9f173c111",

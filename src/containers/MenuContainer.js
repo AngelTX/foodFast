@@ -6,7 +6,7 @@ import MenuItem from '../components/MenuItem.js';
 
 class MenuContainer extends Component {
 
-  createBreakfastMenu = (props) => {
+  createBreakfastMenu = () => {
 
     let menu = []
     for (var i = 0; i < this.props.menuItems.breakfast.length; i++){
@@ -15,7 +15,7 @@ class MenuContainer extends Component {
     return menu;
   };
 
-  createLunchMenu = (props) => {
+  createLunchMenu = () => {
 
     let menu = []
     for (var i = 0; i < this.props.menuItems.breakfast.length; i++){
@@ -24,7 +24,7 @@ class MenuContainer extends Component {
     return menu;
   };
 
-  createDinnerMenu = (props) => {
+  createDinnerMenu = () => {
 
     let menu = []
     for (var i = 0; i < this.props.menuItems.breakfast.length; i++){
@@ -38,37 +38,37 @@ class MenuContainer extends Component {
       <div>
         <div>
           <Row className="menu">
-            <Col xs={4}>
+            <Col xs={4} className="slot">
               <Col xs={12}>
                 <div>
                 <h1>Breakfast</h1>
                 {this.props.menuItems.breakfast ?
                   this.createBreakfastMenu()
-                  : <h1>null</h1>
+                  : <h2>null</h2>
                 }
                 </div>
               </Col><br/>
             </Col>
 
-            <Col xs={4}>
+            <Col xs={4} className="slot">
               <Col xs={12}>
                 <div>
                 <h1>Lunch</h1>
                 {this.props.menuItems.lunch ?
                   this.createLunchMenu()
-                  : <h1>null</h1>
+                  : <h2>null</h2>
                 }
                 </div>
               </Col><br/>
             </Col>
 
-            <Col xs={4}>
+            <Col xs={4} className="slot">
               <Col xs={12}>
                 <div>
                 <h1>Dinner</h1>
                 {this.props.menuItems.dinner ?
                   this.createDinnerMenu()
-                  : <h1>null</h1>
+                  : <h2>null</h2>
                 }
                 </div>
               </Col><br/>
