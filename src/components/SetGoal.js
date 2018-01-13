@@ -3,21 +3,17 @@ import { Col, Button, Row, } from 'react-bootstrap';
 import logo from '../public/imgs/logo.png';
 import Paper from 'material-ui/Paper';
 
+import setGoalStyle from '../public/styles.js'
 
-const style = {
-height: 150,
-width: 500,
-margin: 20,
-textAlign: 'center',
-display: 'inline-block',
-};
+
+
 
 class SetGoal extends Component {
 
   render(){
     return(
       <header>
-        <Paper style={style} zDepth={1}>
+        <Paper style={setGoalStyle} zDepth={1}>
           <div>
                 <img
                   src={logo}

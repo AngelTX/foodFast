@@ -2,18 +2,20 @@ import React, { Component } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Paper from 'material-ui/Paper';
 
+import menuContainerStyle from '../public/styles.js'
+
 
 
 import MenuItem from '../components/MenuItem.js';
 
 
-const style = {
-height: 30,
-width: 200,
-margin: 20,
-textAlign: 'center',
-display: 'inline-block',
-};
+// const style = {
+//     height: 30,
+//     width: 200,
+//     margin: 20,
+//     textAlign: 'center',
+//     display: 'inline-block',
+//   };
 
 class MenuContainer extends Component {
 
@@ -47,8 +49,8 @@ class MenuContainer extends Component {
   render(){
     return(
       <div>
-        
-        <Paper style={style} zDepth={1}>
+
+        <Paper style={menuContainerStyle} zDepth={1}>
           <div>
           <h1>Breakfast</h1>
           {this.props.menuItems.breakfast ?
@@ -58,7 +60,7 @@ class MenuContainer extends Component {
           </div>
         </Paper>
 
-        <Paper style={style} zDepth={1}>
+        <Paper style={menuContainerStyle} zDepth={1}>
           <div>
           <h1>Lunch</h1>
           {this.props.menuItems.lunch ?
@@ -68,7 +70,7 @@ class MenuContainer extends Component {
           </div>
         </Paper>
 
-        <Paper style={style} zDepth={1}>
+        <Paper style={menuContainerStyle} zDepth={1}>
           <div>
           <h1>Dinner</h1>
           {this.props.menuItems.dinner ?
