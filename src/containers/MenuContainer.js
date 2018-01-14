@@ -40,33 +40,27 @@ class MenuContainer extends Component {
       <div>
 
         <Paper style={menuContainerStyle} zDepth={1}>
-          <div>
           <h1>Breakfast</h1>
           {this.props.menuItems.breakfast ?
             this.createBreakfastMenu()
             : null
           }
-          </div>
         </Paper>
 
         <Paper style={menuContainerStyle} zDepth={1}>
-          <div>
           <h1>Lunch</h1>
           {this.props.menuItems.lunch ?
             this.createLunchMenu()
             : null
           }
-          </div>
         </Paper>
 
         <Paper style={menuContainerStyle} zDepth={1}>
-          <div>
           <h1>Dinner</h1>
           {this.props.menuItems.dinner ?
             this.createDinnerMenu()
             : null
           }
-          </div>
         </Paper>
 
       </div>
