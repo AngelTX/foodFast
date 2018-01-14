@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 //Components
 import SetGoal from './components/SetGoal.js';
 import MenuContainer from './containers/MenuContainer.js';
-
+import Header from './components/Header.js';
 const category = ['breakfast', 'lunch', 'dinner'];
 class App extends Component {
   constructor() {
@@ -53,6 +53,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Header/>
         <SetGoal onNewUpdate={this.handleChange} onNewSubmit={this.handleSubmit}/>
         <MenuContainer menuItems={this.state}/>
       </div>

@@ -23,6 +23,7 @@ var fetchBody = {
   "appId":"0b4e5619",
   "appKey":"223dec7705dcadbdfd9fdbc9f173c111",
   "fields":["item_name","brand_name","nf_calories","images_front_full_url", "upc"],
+  "limit":3,
   "sort":{
     "field":"_score",
     "order":"desc"

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { Col, Row } from 'react-bootstrap';
-
+import Paper from 'material-ui/Paper';
 
 import MenuItem from '../components/MenuItem.js';
+
+import menuContainerStyle from '../public/styles.js'
+
 
 class MenuContainer extends Component {
 
@@ -36,45 +38,31 @@ class MenuContainer extends Component {
   render(){
     return(
       <div>
-        <div>
-          <Row className="menu">
-            <Col xs={4} className="slot">
-              <Col xs={12}>
-                <div>
-                <h1>Breakfast</h1>
-                {this.props.menuItems.breakfast ?
-                  this.createBreakfastMenu()
-                  : <h2>null</h2>
-                }
-                </div>
-              </Col><br/>
-            </Col>
 
-            <Col xs={4} className="slot">
-              <Col xs={12}>
-                <div>
-                <h1>Lunch</h1>
-                {this.props.menuItems.lunch ?
-                  this.createLunchMenu()
-                  : <h2>null</h2>
-                }
-                </div>
-              </Col><br/>
-            </Col>
+        <Paper style={menuContainerStyle} zDepth={1}>
+          <h1>Breakfast</h1>
+          {this.props.menuItems.breakfast ?
+            this.createBreakfastMenu()
+            : null
+          }
+        </Paper>
 
-            <Col xs={4} className="slot">
-              <Col xs={12}>
-                <div>
-                <h1>Dinner</h1>
-                {this.props.menuItems.dinner ?
-                  this.createDinnerMenu()
-                  : <h2>null</h2>
-                }
-                </div>
-              </Col><br/>
-            </Col>
-          </Row>
-        </div>
+        <Paper style={menuContainerStyle} zDepth={1}>
+          <h1>Lunch</h1>
+          {this.props.menuItems.lunch ?
+            this.createLunchMenu()
+            : null
+          }
+        </Paper>
+
+        <Paper style={menuContainerStyle} zDepth={1}>
+          <h1>Dinner</h1>
+          {this.props.menuItems.dinner ?
+            this.createDinnerMenu()
+            : null
+          }
+        </Paper>
+
       </div>
     )
   }
