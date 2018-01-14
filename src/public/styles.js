@@ -8,7 +8,7 @@ const menuContainerStyle = {
     display: 'inline-block',
   };
 
-  const setGoalStyle = {
+const setGoalStyle = {
   height: 150,
   width: 500,
   margin: 20,

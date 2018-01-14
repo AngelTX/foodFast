@@ -1,21 +1,10 @@
 import React, { Component } from 'react';
-import { Col, Row } from 'react-bootstrap';
 import Paper from 'material-ui/Paper';
-
-import menuContainerStyle from '../public/styles.js'
-
-
 
 import MenuItem from '../components/MenuItem.js';
 
+import menuContainerStyle from '../public/styles.js'
 
-// const style = {
-//     height: 30,
-//     width: 200,
-//     margin: 20,
-//     textAlign: 'center',
-//     display: 'inline-block',
-//   };
 
 class MenuContainer extends Component {
 
